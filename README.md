@@ -200,18 +200,8 @@ The application includes robust exception handling for:
 
 ---
 
-# 📸 Screenshots
-
-You can add screenshots here before submitting:
-
-### CLI
-
-```
-(Add CLI Screenshot Here)
-```
-
-### Streamlit UI
-
+#Deployed Link 
+https://binance-futures-trading-bot-eevkl3appekgziz6jvcefi5.streamlit.app/
 ```
 (Add Streamlit UI Screenshot Here)
 ```
