@@ -5,20 +5,18 @@ load_dotenv()
 
 try:
     import streamlit as st
-except ImportError:
+except:
     st = None
 
 
 def get_secret(key):
 
-    # Streamlit Cloud secrets
-    if st is not None:
+    if st:
         try:
             return st.secrets[key]
-        except Exception:
+        except:
             pass
 
-    # Local .env
     return os.getenv(key)
 
 
@@ -28,7 +26,5 @@ SECRET_KEY = get_secret("BINANCE_SECRET_KEY")
 BASE_URL = "https://testnet.binancefuture.com"
 
 
-if not API_KEY or not SECRET_KEY:
-    raise ValueError(
-        "API credentials not found. Add them in Streamlit Secrets or .env"
-    )
+# Deployment mode
+APP_MODE = get_secret("APP_MODE") or "LIVE"
